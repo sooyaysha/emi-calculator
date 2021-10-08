@@ -1,0 +1,10 @@
+import streamlit at st
+
+def calculate_emi(p, n, r):
+  emi = p * (r/100) * ((1 + (r/100) ** n) / (1 + ((r/100) ** n) - 1))
+st.title('EMI Calculator App')
+st.slider('principal', 1000, 1000000)
+st.slider('tenure', 1, 20)
+st.slider('roi', 1, 15)
+if st.button('Calculate'):
+  calculate_emi(principal, n, r)
